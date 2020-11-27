@@ -24,7 +24,7 @@ div.navbar>img {
   background-attachment: fixed;
   height: 80px;
   width: 100%;
-  /*position: sticky;*/
+  position: fixed;  
 }
 
 .navbar>p {
@@ -116,3 +116,41 @@ tr:nth-child(even)  {
   background-color: #e9d7fc;
 }
 
+.lstItem {  
+  display: inline-block;
+  margin: 0px;
+  border: 1px #e9d7fc solid;
+  border-radius: 10px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  font-size: 1.3rem;
+  color: gray;
+  padding-top: 1px;
+  cursor: pointer;
+}
+
+.lstItem:hover {
+  background: #a453f5;
+  color: white;
+}
+
+.lst {
+  padding: 5px;
+  width: fit-content;
+  margin: auto;
+}
+
+footer {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  background: #fff;
+  width: 100vw;
+  opacity: 0.9;
+  height: 50px;    
+}
+
+.glyphicon {
+  margin: auto;
+}
