@@ -1,38 +1,118 @@
-.App {
-  text-align: center;
+:root{
+  font-size: 15px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;  
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+div.navbar>img {
+  height: 50px;
+  width: 50px;
+  margin: auto 10px auto 10px;
+  border-radius: 50%;
+  border: 1px gray solid;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.navbar {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: #a453f5;
+  background-attachment: fixed;
+  height: 80px;
+  width: 100%;
+  /*position: sticky;*/
+}
+
+.navbar>p {
+  color: #f5f8ff;
+  font-size: 1.7rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-family: sans-serif;
+  margin: auto 0 auto 0;
+}
+
+.drpCard  {
+  display: flex;  
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  height: auto;
+  padding: 5px;
+  box-shadow: 3px 3px 5px 6px #ccc;
   color: white;
+  background-color: deepskyblue;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: medium;
+  text-align: center;
+  padding-top: 2px;
+  letter-spacing: 2px;  
+  cursor: pointer;
+  max-width: 600px;
 }
 
-.App-link {
-  color: #61dafb;
+.dspTxt  {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  letter-spacing: 3px;
+  font-family: sans-serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.drpImg {
+  height: 200px;
+  width: 200px;
+  border-radius: 10px;
 }
+
+.thumbImg {
+  height: 20px;
+  width: 20px;
+  border-radius: 10%;
+  margin: 0 auto 0 auto;  
+  display: inline-block;
+}
+
+.infoCard>p {
+  text-decoration: none;
+  display: inline;
+}
+
+.infoCard>label {
+  text-decoration: none;
+  display: inline;
+}
+
+.infoCard {
+  height: auto;
+  width: 70%;
+  max-width: 400px;
+  border: 1px #8867ab solid;
+  border-radius: 50px;
+  margin: 0 auto 20px auto;
+  padding: 15px;
+  box-shadow: 3px 3px 5px 6px #ccc;  
+}
+table {
+  border-top: 1px #a453f5 solid;
+}
+
+th, td {
+  padding: 5px;
+  text-align: left;  
+}
+
+table {
+  margin-top: 10px;
+}
+
+tr:nth-child(even)  {
+  background-color: #e9d7fc;
+}
+
