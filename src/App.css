@@ -128,6 +128,7 @@ tr:nth-child(even)  {
   color: gray;
   padding-top: 1px;
   cursor: pointer;
+  user-select: none;
 }
 
 .lstItem:hover {
