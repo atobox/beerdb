@@ -16,7 +16,7 @@ class App extends React.Component {
     super(props)
     this.dtpointer = 0;
     this.state = {
-      beerData: brData.slice(this.dtpointer, this.dtpointer + 20),
+      beerData: brData.slice(this.dtpointer, this.dtpointer + 20),      
     };    
   }
 
@@ -35,12 +35,11 @@ class App extends React.Component {
   }  
 
   pageOffset = (offset) => {
-    let pnt = 20 * offset;
-    this.setState({beerData: brData.slice(pnt, pnt + 20),});
+    this.dtpointer = 20 * offset;
+    this.setState({beerData: brData.slice(this.dtpointer, this.dtpointer + 20),});
   }
-    
-  render()  {
 
+  render()  {    
     let imgIdx = 0;
     return (
       <div>
@@ -90,9 +89,9 @@ class App extends React.Component {
       <footer>
         <div className="lst">
           <div className="lstItem" onClick={this.dcr}><span className="glyphicon glyphicon-menu-left"></span></div>
-          <div className="lstItem" onClick={() => this.pageOffset(0)}>1</div>
-          <div className="lstItem" onClick={() => this.pageOffset(1)}>2</div>
-          <div className="lstItem" onClick={() => this.pageOffset(2)}>3</div>
+          <div className="lstItem" onClick={() => this.pageOffset(((this.dtpointer + 20) / 20) - 1)}>{(this.dtpointer + 20) / 20}</div>
+          <div className="lstItem" onClick={() => this.pageOffset(((this.dtpointer + 40) / 20) - 1)}>{(this.dtpointer + 40) / 20}</div>
+          <div className="lstItem" onClick={() => this.pageOffset(((this.dtpointer + 60) / 20) - 1)}>{(this.dtpointer + 60) / 20}</div>
           <div className="lstItem" onClick={this.incr}><span className="glyphicon glyphicon-menu-right"></span></div>
         </div>
       </footer>

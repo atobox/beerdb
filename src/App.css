@@ -131,7 +131,12 @@ tr:nth-child(even)  {
 }
 
 .lstItem:hover {
-  background: #a453f5;
+  background: #a683c9;
+  color: white;
+}
+
+.lstItem:nth-child(2) {
+  background-color: #d5bdec;
   color: white;
 }
 
