@@ -55,7 +55,7 @@ class App extends React.Component {
     let imgIdx = 0;
     return (
       <div>
-        <TopNav onChange = {this.handleonChange}/><div style={{height: "100px"}}></div>
+        <TopNav onChange = {this.handleonChange}/><div style={{height: "130px"}}></div>
         {this.state.beerData && this.state.beerData.map(dt => {
           (imgIdx === 5) && (imgIdx = 0);        
           return(

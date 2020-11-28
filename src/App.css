@@ -19,12 +19,10 @@ div.navbar>img {
 .navbar {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  background-color: #a453f5;
-  background-attachment: fixed;
+  justify-content: center;    
   height: 80px;
   width: 100%;
-  position: fixed;  
+  margin: auto;  
 }
 
 .navbar>p {
@@ -161,22 +159,25 @@ footer {
   margin: auto;
 }
 
-.navbar>input  {
+.topnav>input  {
   height: 30px;
-  margin-top: auto;
-  margin-bottom: auto;
-  border-radius: 10px;  
-  position: fixed;
-  right: 0px;
-  margin: 20px 10px auto 0;
+  margin: auto;
+  right: 0px;  
   border: none;
   padding: 5px;
+  display: block;  
+  width: 90vw;
+  border-bottom: 1px #a453f5 solid;
+  border-radius: 10px;
+
 }
 
-.navbar>input:focus  {
+.topnav>input:focus  {
   outline: none;
 }
 
-.navbar:last-child {
-  align-content: flex-end;
+.topnav {
+  position: fixed;  
+  background-color: #a453f5;
+  width: 100vw;
 }
