@@ -16,8 +16,9 @@ class App extends React.Component {
     super(props)
     this.dtpointer = 0;
     this.state = {
-      beerData: brData.slice(this.dtpointer, this.dtpointer + 20),      
+      beerData: brData.slice(this.dtpointer, this.dtpointer + 20),    
     };    
+    this.searchtxt = "";
   }
 
   dcr = () => { 
@@ -39,11 +40,22 @@ class App extends React.Component {
     this.setState({beerData: brData.slice(this.dtpointer, this.dtpointer + 20),});
   }
 
+  handleonChange = (value) => {    
+    value ?
+    this.setState({
+    beerData: brData.filter(dt => {
+        return (dt.name.match(value))
+      }),
+    }) : 
+    this.setState({beerData: brData.slice(this.dtpointer, this.dtpointer + 20),});
+    this.searchtxt = value;
+  }
+
   render()  {    
     let imgIdx = 0;
     return (
       <div>
-        <TopNav /><div style={{height: "100px"}}></div>
+        <TopNav onChange = {this.handleonChange}/><div style={{height: "100px"}}></div>
         {this.state.beerData && this.state.beerData.map(dt => {
           (imgIdx === 5) && (imgIdx = 0);        
           return(
@@ -85,16 +97,20 @@ class App extends React.Component {
          </DropDown>
           );
        })}
-       <div style = {{height: "20vh"}}></div>
-      <footer>
-        <div className="lst">
-          <div className="lstItem" onClick={this.dcr}><span className="glyphicon glyphicon-menu-left"></span></div>
-          <div className="lstItem" onClick={() => this.pageOffset(((this.dtpointer + 20) / 20) - 1)}>{(this.dtpointer + 20) / 20}</div>
-          <div className="lstItem" onClick={() => this.pageOffset(((this.dtpointer + 40) / 20) - 1)}>{(this.dtpointer + 40) / 20}</div>
-          <div className="lstItem" onClick={() => this.pageOffset(((this.dtpointer + 60) / 20) - 1)}>{(this.dtpointer + 60) / 20}</div>
-          <div className="lstItem" onClick={this.incr}><span className="glyphicon glyphicon-menu-right"></span></div>
-        </div>
-      </footer>
+       <div style = {{height: "20vh"}}></div>      
+      {        
+        (!this.searchtxt) && (
+          <footer>
+            <div className="lst">
+              <div className="lstItem" onClick={this.dcr}><span className="glyphicon glyphicon-menu-left"></span></div>
+              <div className="lstItem" onClick={() => this.pageOffset(((this.dtpointer + 20) / 20) - 1)}>{(this.dtpointer + 20) / 20}</div>
+              <div className="lstItem" onClick={() => this.pageOffset(((this.dtpointer + 40) / 20) - 1)}>{(this.dtpointer + 40) / 20}</div>
+              <div className="lstItem" onClick={() => this.pageOffset(((this.dtpointer + 60) / 20) - 1)}>{(this.dtpointer + 60) / 20}</div>
+              <div className="lstItem" onClick={this.incr}><span className="glyphicon glyphicon-menu-right"></span></div>
+            </div>
+          </footer>
+        )
+      }      
       </div>
     );
   }

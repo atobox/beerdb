@@ -159,3 +159,23 @@ footer {
 .glyphicon {
   margin: auto;
 }
+
+.navbar>input  {
+  height: 30px;
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 10px;  
+  position: fixed;
+  right: 0px;
+  margin: 20px 10px auto 0;
+  border: none;
+  padding: 5px;
+}
+
+.navbar>input:focus  {
+  outline: none;
+}
+
+.navbar:last-child {
+  align-content: flex-end;
+}

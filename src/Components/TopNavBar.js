@@ -6,6 +6,7 @@ export default function TopNav(props)  {
         <div className="navbar">
             <img src={logo} alt="BeerDBLogo"/>
             <p>BeerDB</p>
+            <input type="text" onChange={(e) => { props.onChange(e.target.value) }} placeholder="Search beer name"/>
         </div>
     );
 }
